@@ -1,2 +1,1 @@
-   # elif command == 'exit':
-   #    break
+index_id_game, index_nama_game, index_kategori_game, index_tahun_game, index_harga_game, index_stock_game

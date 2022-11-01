@@ -1,10 +1,11 @@
-from fungsiDanish import length, padding, elemen_list
+from fungsiDanish import length, elemen_list, OSoutput
 
 ##########################################################
 # F07 - Listing game berdasarkan ID, tahun, dan harga
 
 def listing(gamecsv):
-    jenis = input("Skema Sorting")
+    print('Skema sorting yg dapat dipilih: "tahun+", "tahun-", "harga+", atau "harga-"')
+    jenis = input("Pilih Skema Sorting: ")
     if jenis == "tahun+" or jenis == "harga+":
         selection_sort_plus(jenis, gamecsv)
 
@@ -15,6 +16,15 @@ def listing(gamecsv):
         print("Masukkan tidak sesuai")
         print('Silahkan ketik "tahun+", "tahun-", "harga+", atau "harga-"')
 
+    print("Apakah ingin melihat skema sorting lain?")
+    yn = input('y/n?\n')
+    if yn == 'y' or yn == 'Y':
+        listing(gamecsv)
+    elif yn == 'n' or yn == 'N':
+        pass
+    else:
+        print('Input tidak valid. Silakan masukkan ya/tidak(y/n)')
+    
 
 # {Sorting Algorithms}
 # sort ascending
@@ -40,7 +50,7 @@ def selection_sort_plus(jenis, gamecsv):
         nama_list[i], nama_list[indexMax] = nama_list[indexMax], nama_list[i]
         dataIndex[i], dataIndex[indexMax] = dataIndex[indexMax], dataIndex[i]
 
-    OSoutput(dataIndex)
+    OSoutput(dataIndex, gamecsv)
 
 # sort descending
 def selection_sort_min(jenis, gamecsv):
@@ -65,19 +75,6 @@ def selection_sort_min(jenis, gamecsv):
         nama_list[i], nama_list[indexMin] = nama_list[indexMin], nama_list[i]
         dataIndex[i], dataIndex[indexMin] = dataIndex[indexMin], dataIndex[i]
 
-    OSoutput(dataIndex)
-
-
-# fungsi untuk menuliskan hasil sort ke OS
-def OSoutput(dataIndex):
-    global gamecsv
-
-    no = 0
-    for i in dataIndex:
-        no +=1
-        teks = f'NO | ID | {padding("Nama Game", 20)}| {padding("Kategori Game", 20)} | {padding("Tahun", 5)} | {"Harga"} | {"Stock"}'
-        teks = f'{no} | {gamecsv[i][0]} | {padding(gamecsv[i][1], 20)}| {padding(gamecsv[i][2], 20)} | {padding(gamecsv[i][3], 5)} | {gamecsv[i][4]} | {gamecsv[i][5]}'
-
-        print(teks)
+    OSoutput(dataIndex, gamecsv)
 
 

@@ -2,12 +2,11 @@ from fungsiDanish import *
 ##########################################################
 # F10
 
-def cariGameF10(user_id):
+def cariGameF10(user_id, gamecsv, kepemilikancsv):
 
     # Ngelist game yg dimiliki dari kepemilikan.csv
     
     dataIndex = []
-    kepemilikancsv = bacafile("kepemilikan.csv")
     for row in range(length(kepemilikancsv)):
         if kepemilikancsv[row][1] == user_id:
             dataIndex = myappend(dataIndex, row)
@@ -43,4 +42,4 @@ def cariGameF10(user_id):
     else:
         dataIndex3 = dataIndex2
 
-    OSoutput(dataIndex3)   
+    OSoutput(dataIndex3, gamecsv)   

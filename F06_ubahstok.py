@@ -1,16 +1,16 @@
-def UbahStok():
-    global gamecsv, index_id_game, index_nama_game, index_kategori_game, index_tahun_game, index_harga_game, index_stock_game
+from fungsiDanish import *
+
+def UbahStok(gamecsv, ):
 
     print(">>> Menu ubah stok")
     id_game = input("Masukkan ID Game: ")
 
     found = False
     index_found = 0
-    while found == False:
-        if gamecsv[index_found][index_id_game] == id_game:
+    for i in range(length(gamecsv)):
+        if gamecsv[i][0] == id_game:
+            index_found = i
             found = True
-        else:
-            index_found += 1
     
     if found == True:
         stok = int(input("Masukkan jumlah: "))

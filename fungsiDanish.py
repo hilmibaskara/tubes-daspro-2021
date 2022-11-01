@@ -62,7 +62,7 @@ def bacafile(namafile):
 
 
     def jadikan_int(array_data):
-        temp = [i for i in mysplit(array_data, ",")]
+        temp = [i for i in mysplit(array_data, ";")]
 
         for i in range(length(lines[0])):
             try:
@@ -104,6 +104,20 @@ def cariDlmList(list, ygDicari, index):
         listTemp = list
     return listTemp
 
+# fungsi untuk menuliskan hasil sort ke OS
+def OSoutput(dataIndex, gamecsv):
 
+    if (length(dataIndex)) != 0:
+        judul = f'NO |   ID    | {padding("Nama Game", 20)}| {padding("Kategori Game", 20)} | {padding("Tahun", 5)} | {"Harga"} | {"Stock"}'
+        print(judul)
 
+        no = 0
+        for i in dataIndex:
+            no +=1
+            teks = f'{no}  | {padding((gamecsv[i][0]),7)} | {padding(gamecsv[i][1], 20)}| {padding(gamecsv[i][2], 20)} | {padding(gamecsv[i][3], 5)} | {gamecsv[i][4]} | {gamecsv[i][5]}'
+            print(teks)
 
+    else:
+      print("--------Tidak ada game yang memenuhi kriteria------")
+
+    print("")

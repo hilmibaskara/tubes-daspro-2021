@@ -39,4 +39,7 @@ def join(arr,joinstr):
   return kalimat
 
 def getUsername(data, user_id):
-  return data[user_id][1]
+  return data[user_id-1][1]
+
+def getRole(data, user_id):
+  return data[user_id-1][4]

@@ -1,3 +1,4 @@
 id;nama;kategori;tahun_rilis;harga;stok
-GAME001;BNMO - Play Along With Crypto;Adventure;2022;100000;1
-GAME002;Dasar Pemrograman;Coding;2022;0;10
+GAME1;BNMO - Play Along With Crypto;Adventure;2022;100000;1
+GAME2;Dasar Pemrograman;Coding;2022;0;10
+GAME3;Overwatch;Shooting FPS;2019;89000;20
